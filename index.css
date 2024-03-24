@@ -1,0 +1,387 @@
+@font-face {
+    font-family: Abel;
+    src: url(Abel-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Abel;
+    background: #d9dee8;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+nav * {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 3;
+    background: #d9dee8;
+    /* border-bottom: 1px solid #e1e1e4; */
+}
+
+label.logo {
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 60px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    z-index: 2;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #383838;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+    color: #000;
+}
+
+.line {
+    height: 3px;
+    width: 100%;
+    background: #000;
+    border-radius: 2px;
+    display: block;
+    transition: .3s;
+    transform-origin: center;
+}
+
+.checkbtn__container {
+    float: right;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.checkbtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+    width: 30px;
+    margin-right: 40px;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 944px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 40px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 848px) {
+    label.logo {
+        padding-left: 30px;
+        font-size: 25px;
+    }
+
+    .checkbtn {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        width: 100%;
+        background: #d9dee8;
+        top: 80px;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #000;
+    }
+
+    nav ul {
+        max-height: 0;
+        /* left: -100%; */
+        transition: all .3s;
+        overflow: hidden;
+        box-shadow: 0px 15px 10px -15px #111;
+    }
+
+    #check:checked~ul {
+        left: 0;
+        max-height: 60vh;
+    }
+
+    .content {
+        flex-direction: column-reverse;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    .column {
+        flex: 1 !important;
+    }
+
+    .content__container {
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    .card {
+        border-radius: 0 !important;
+    }
+
+    .title {
+        font-size: 30px !important;
+    }
+
+    input,
+    textarea {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .scrollarea img {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 849px) {
+    .column:first-child {
+        width: 280px;
+    }
+
+    .scrollarea::before {
+        content: ' ';
+        display: block;
+        background-image: url('assets/lemgo.webp');
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        z-index: -10;
+        filter: brightness(0.6);
+    }
+}
+
+#check:checked+.checkbtn__container .line:nth-child(1) {
+    transform: translateY(11px) rotate(-45deg);
+}
+
+#check:checked+.checkbtn__container .line:nth-child(2) {
+    opacity: 0;
+}
+
+#check:checked+.checkbtn__container .line:nth-child(3) {
+    transform: translateY(-11px) rotate(45deg);
+}
+
+.content__container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    gap: 20px;
+    margin: auto;
+    height: 100%;
+    padding: 15px;
+}
+
+.scrollarea {
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+}
+
+.scroll__container {
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* .scrollarea .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+} */
+
+.scrollarea img {
+    width: 600px;
+    max-width: 60%;
+    margin-top: 10px;
+}
+
+.column:last-child {
+    flex: 1;
+}
+
+.card {
+    background: #fff4e7;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.card .title {
+    font-size: 48px;
+    color: rgb(103, 111, 108);
+}
+
+.title:not(:first-child) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title:first-child {
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 400px;
+}
+
+.section {
+    line-height: 27px;
+    margin-bottom: 30px;
+}
+
+.section {
+    /* min-height: 650px; */
+    overflow: auto;
+}
+
+.section img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* .card div:not(.title) {
+    margin-bottom: 20px;
+} */
+
+.field {
+    margin-bottom: 20px;
+}
+
+.seperator {
+    height: 2px;
+    background-color: #86c7af;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.seperator.margin__0 {
+    margin-bottom: 0 !important;
+}
+
+.subtitle {
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+.card li {
+    list-style-position: inside;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card form input,
+.card form textarea,
+.card form button {
+    appearance: none;
+    border: 1px solid #86c7af;
+    background: #f6f1ef;
+    padding: 10px;
+    font-family: Abel;
+}
+
+.card form input[type=submit] {
+    background: #86c7af;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card form input[type=submit]:hover {
+    background: #7ebba4;
+}
+
+footer {
+    padding: 40px;
+    background: rgb(217, 222, 232, 1);
+}
+
+#charactercounter {
+    text-align: right;
+}
+
+input[type=submit]:disabled {
+    filter: grayscale(1);
+    cursor: not-allowed !important;
+}
