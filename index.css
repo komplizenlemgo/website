@@ -262,7 +262,7 @@ a:hover {
     left: 0;
     width: 100%;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0);
 } */
 
 .scrollarea img {
@@ -325,7 +325,7 @@ a:hover {
 
 .seperator {
     height: 2px;
-    background-color: #86c7af;
+    background-color: #000000;
     width: 100%;
     margin-bottom: 20px;
 }
