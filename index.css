@@ -29,7 +29,7 @@ nav {
     height: 80px;
     width: 100%;
     z-index: 3;
-    background: #d9dee8;
+    background: #000000;
     /* border-bottom: 1px solid #e1e1e4; */
 }
 
@@ -68,7 +68,7 @@ a:hover {
 .line {
     height: 3px;
     width: 100%;
-    background: #000;
+    background: #000000;
     border-radius: 2px;
     display: block;
     transition: .3s;
